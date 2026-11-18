@@ -1,0 +1,73 @@
+:root {
+  /* Sky background */
+  --sky-top:        #5EA9FF;
+  --sky-mid:        #A9D2FF;
+  --sky-bottom:     #EEF6FF;
+  --bg:             linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-bottom) 100%);
+
+  /* Glass surfaces */
+  --surface:        rgba(255,255,255,0.72);
+  --surface-strong: rgba(255,255,255,0.90);
+  --surface-border: rgba(255,255,255,0.65);
+  --blur:           24px;
+  --shadow-card:    0 8px 32px rgba(30,80,160,0.12), 0 1px 0 rgba(255,255,255,0.7) inset;
+
+  /* Brand — Atom Blue */
+  --primary-300:    #8CC6FF;
+  --primary-400:    #5AAEFF;
+  --primary-500:    #2F7BFF;
+  --primary-600:    #1F62E0;
+  --primary-grad:   linear-gradient(180deg,#5AB0FF 0%,#2F7BFF 100%);
+  --glow:           0 10px 30px rgba(47,123,255,0.45);
+
+  /* Text */
+  --text:           #0E1726;
+  --text-muted:     #5B6B84;
+  --text-faint:     #94A3B8;
+
+  /* Dock */
+  --dock-bg:        rgba(38,40,46,0.88);
+  --dock-icon:      #C9CFDA;
+  --dock-icon-active:#FFFFFF;
+
+  /* Status */
+  --success:#22C55E; --warn:#F59E0B; --danger:#EF4444;
+
+  /* Radii */
+  --radius-card: 24px;
+  --radius-panel: 16px;
+  --radius-input: 16px;
+  --radius-btn: 14px;
+}
+
+/*
+ * Squircle rule (SPEC §6.2): every rounded corner in the app is a squircle,
+ * never a plain circular-arc radius. This global rule covers every element
+ * with a border-radius, current and future. WebView2/Edge 139+ renders it
+ * natively; older runtimes degrade to normal rounded corners.
+ *
+ * True circles (round icon buttons, badges, the dock play button, dots) are
+ * the only exception — they use the `.circle` utility below so they stay
+ * perfect circles, like iOS.
+ */
+*,
+*::before,
+*::after {
+  corner-shape: squircle;
+}
+
+.circle {
+  border-radius: 9999px;
+  corner-shape: round;
+}
+
+/* Keyboard focus ring (SPEC §7 accessibility) */
+:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* Density (§5.7 Appearance): rem-based paddings/spacings tighten via root scale */
+html[data-density="compact"] {
+  font-size: 14px;
+}

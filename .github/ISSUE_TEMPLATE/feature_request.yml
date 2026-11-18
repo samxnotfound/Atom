@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest an idea or improvement for Atom.
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Atom is intentionally small and local-first. Features that require an account, a server, telemetry, or bundled third-party photos fall outside the project's scope.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe the situation, not just the solution.
+      placeholder: I lose track of which category a session belonged to when I start it in a hurry.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like Atom to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you've considered
+      description: Current workarounds, other apps, or a simpler version of the idea.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This works fully offline and needs no account or network access.
+          required: true
+        - label: I searched existing issues and this isn't already requested.
+          required: true

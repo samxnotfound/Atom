@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import "./ui/tokens.css";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter Variable", Inter, "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+}
+
+/* Hover-reveal scrollbars: invisible until the cursor is over the scroller. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 9999px;
+  background-clip: padding-box;
+}
+*:hover::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.22);
+  border: 2px solid transparent;
+}
+*:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.38);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-strong {
+  background: var(--surface-strong);
+  backdrop-filter: blur(40px) saturate(140%);
+  -webkit-backdrop-filter: blur(40px) saturate(140%);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--shadow-card);
+}
+
+@keyframes cloud-drift-a {
+  from { transform: translateX(-12%); }
+  to   { transform: translateX(12%); }
+}
+@keyframes cloud-drift-b {
+  from { transform: translateX(10%); }
+  to   { transform: translateX(-14%); }
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 9999px;
+  corner-shape: round;
+  pointer-events: none;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.clouds-paused .cloud {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud {
+    animation-play-state: paused;
+  }
+}
