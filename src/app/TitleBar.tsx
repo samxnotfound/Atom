@@ -1,4 +1,4 @@
-import { Atom, Minus, Settings, Square, X, Copy } from "lucide-react";
+import { Minus, Settings, Square, X, Copy } from "lucide-react";
 import { useWindowControls } from "./useWindowControls";
 import { useSettingsDialog } from "./settingsStore";
 import { useTimer } from "../features/focus/timerStore";
@@ -21,9 +21,12 @@ export function TitleBar() {
       className="relative z-20 flex h-11 shrink-0 select-none items-center pl-4"
     >
       <div data-tauri-drag-region className="flex items-center gap-2">
-        <span className="grid size-6 place-items-center rounded-lg bg-[image:var(--primary-grad)] text-white shadow-[var(--glow)]">
-          <Atom size={15} strokeWidth={2.4} />
-        </span>
+        <img
+          src="/logo.png"
+          alt=""
+          draggable={false}
+          className="size-6 rounded-[7px] shadow-[var(--glow)]"
+        />
         <span data-tauri-drag-region className="text-[13px] font-semibold tracking-tight">
           Atom
         </span>

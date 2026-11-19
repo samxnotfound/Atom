@@ -48,6 +48,17 @@ pub fn run() {
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_notification::init())
         .plugin(tauri_plugin_opener::init())
+        .setup(|app| {
+            // Set the window icon explicitly so the titlebar and taskbar icon do
+            // not depend on the icon resource embedded in the .exe.
+            if let (Some(icon), Some(window)) = (
+                app.default_window_icon().cloned(),
+                app.get_webview_window("main"),
+            ) {
+                window.set_icon(icon)?;
+            }
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![
             power::prevent_sleep,
             images::standby_add_images,

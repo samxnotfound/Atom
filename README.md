@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/logo.png" alt="Atom logo" width="120">
+
 # Atom
 
 **A calm, local-first focus timer and time tracker for Windows.**
