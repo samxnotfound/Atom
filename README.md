@@ -18,13 +18,10 @@ Deep work, measured. No accounts, no cloud, no tracking — your data never leav
 </div>
 
 <div align="center">
-  <img src="docs/screenshots/focus.png" alt="Focus page with the duration input and Start button" width="49%">
-  <img src="docs/screenshots/standby.png" alt="Standby Mode full-screen timer over a photo" width="49%">
-  <img src="docs/screenshots/reports.png" alt="Reports dashboard with range filters" width="49%">
-  <img src="docs/screenshots/timeline.png" alt="Timeline day view with pastel session blocks" width="49%">
+  <img src="docs/screenshots/focus.png" alt="Focus page with the duration input and Start button" width="32%">
+  <img src="docs/screenshots/history.png" alt="History list grouped by day with day totals" width="32%">
+  <img src="docs/screenshots/reports.png" alt="Reports dashboard with range filters" width="32%">
 </div>
-
-> **Screenshots are placeholders.** See [`docs/screenshots/`](docs/screenshots/) for the file names to drop in, then delete this note.
 
 ---
 
