@@ -150,7 +150,7 @@ The first Rust build takes a while; later builds are cached.
 
 Issues and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for setup, style, and the PR checklist. If you found a vulnerability, please follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
 
-If Atom saves you time, you can support its development through [GitHub Sponsors](https://github.com/sponsors/samxnotfound).
+**Support the project:** [Donate via Wise](https://wise.com/pay/r/ezDx0WhvxuML0rk)
 
 ---
 
